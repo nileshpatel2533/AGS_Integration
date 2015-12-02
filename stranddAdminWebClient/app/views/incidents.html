@@ -1,0 +1,23 @@
+﻿<section id="spvIncidents">
+    <div class="row">        
+        <div class="col-lg-8" data-bind="compose: { model: sectionMap, preserveContext: true }">
+            <div class="panel">
+                <header class="panel-heading"><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateMapInit"></span></header>
+            </div>            
+        </div>
+        <div class="col-lg-4" data-bind="compose: { model: sectionDetails, preserveContext: true }">
+            <div class="panel">
+                <header class="panel-heading"><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateDetailsInit"></span></header>
+            </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div data-bind="compose: { model: sectionLog, preserveContext: true }">
+                <div class="panel">
+                    <header class="panel-heading"><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLogInit"></span></header>
+                </div>            
+            </div>
+        </div>
+    </div>
+</section>

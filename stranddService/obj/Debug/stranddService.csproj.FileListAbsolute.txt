@@ -1,0 +1,17 @@
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.csprojResolveAssemblyReference.cache
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.Core_Init.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.PaymentBaseInstamojo.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.PaymentTweak.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.HistoryAdditionAndPersistingETA.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.historyeventfix.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.IncidentAdditionalDetails.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.ConfirmChecks.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.ExceptionLogBase.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.CompaniesBase.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.RoleTweak.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.ConcertoTweak.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.AccountRolePublicFix.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.CommunicationBase.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.CostingSlabsAndCommTweaks.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.Migrations.SlabsTweak.resources
+E:\Avacara\StrandD_Core\stranddService\obj\Debug\stranddService.csproj.GenerateResource.Cache

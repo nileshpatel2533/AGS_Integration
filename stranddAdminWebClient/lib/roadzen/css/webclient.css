@@ -1,0 +1,156 @@
+﻿body {overflow-y: scroll;}
+html {overflow-y: scroll;}
+
+/*Loading Splash Page*/
+.splash {
+    text-align: center;
+    margin: 10% 0 0 0;
+}
+
+    .splash .message {
+        font-size: 5em;
+        line-height: 1.5em;
+        -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+        text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+        text-transform: uppercase;
+    }
+
+    .splash .fa-spinner {
+        text-align: center;
+        display: inline-block;
+        font-size: 5em;
+        margin-top: 50px;
+    }
+
+/*Logo*/
+.logo {
+    float: left;
+    margin-top: 15px;
+}
+
+/*Loader*/
+.header-loader {
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+    .header-loader i {
+        font-size: 20px;
+    }
+
+/*Google Map*/
+.gmaps {
+    height: 425px;
+    width: 100%;
+}
+
+/*Incident Log*/
+.log-table td {
+    vertical-align: middle !important;
+}
+
+.l-progress .progress {
+    margin-bottom: 5px;
+}
+/*Incident Details*/
+
+.media .media-body small {
+    display: inline;
+}
+
+.details-table tbody tr td {
+    padding: 11px 15px;
+    border-color: #eeeff1;
+}
+
+    .details-table tbody tr td i {
+        font-size: 20px;
+    }
+
+.details-table > tbody > tr > td:last-child {
+    text-align: right;
+}
+
+.selected {
+    background-color: silver;
+}
+
+/*Media Object Customization*/
+.inline-media, .media-body {
+    display: inline;
+}
+
+
+/*Panel Theming*/
+.strandd-head {
+    background: #ff6c60;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    color: #fff;
+    line-height: 50px;
+}
+
+    .strandd-head span {
+        background: #e56155;
+        padding: 16px;
+        -webkit-border-radius: 4px 0px 0px 0px;
+        border-radius: 4px 0px 0px 0px;
+    }
+
+        .strandd-head span i {
+            font-size: 18px;
+        }
+
+    .strandd-head h3 {
+        display: inline;
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .strandd-head span.strandd-combo {
+        background: #e56155;
+        padding-top: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 15px;
+        line-height: normal;
+        -webkit-border-radius: 0px 4px 0px 0px;
+        border-radius: 0px 4px 0px 0px;
+    }
+
+
+/*Service Log Displays*/
+.information {
+}
+
+.warning {
+    background-color: lightyellow;
+}
+
+.error {
+    background-color: lightpink;
+}
+
+/*----switch ----*/
+
+.has-switch > div.switch-on label {
+    background-color: #e56155;
+}
+
+.has-switch span.switch-left {
+    border-radius: 30px 0 0 30px;
+    background-color: #2A3542;
+    color: #e56155;
+    border-left: 1px solid transparent;
+}
+
+.switch-square label {
+    border-radius: 0 6px 6px 0;
+    border-color: #e56155;
+}
+
+.switch-label {
+    font-size: x-large;
+    vertical-align: text-bottom;
+}

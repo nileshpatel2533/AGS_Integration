@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>StrandD Admin Web Client</title>
+
+    <script src="lib/roadzen/js/js-utils.js"></script>
+    <script type="text/javascript">
+
+        //Global App Boot Settings
+        window.serviceEnvironment = "CTE"
+        window.debugFlag = true;
+        window.appVersion = "v5.336";
+        window.buildIteration = "G";
+        
+        //Query String Environment Override
+        if (getParameterByName("serviceEnvironmentOverride")) { window.serviceEnvironment = getParameterByName("serviceEnvironmentOverride"); }
+        if (getParameterByName("debugFlagOverride")) { window.debugFlag = getParameterByName("debugFlagOverride"); }
+
+        //Calculations & Displays
+        window.versionDisplay = appVersion;
+        if (window.serviceEnvironment != "PROD") { window.versionDisplay += "-" + window.buildIteration + " [" + window.serviceEnvironment + "] "; }
+
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="StrandD Admin Web Client">
+    <meta name="author" content="Avacara-RKP">
+    <meta name="keyword" content="StrandD">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+    <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-landscape.png" media="(orientation:landscape)" />
+    <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-portrait.png" media="(orientation:portrait)" />
+    <link rel="apple-touch-icon" href="lib/durandal/img/icon.png" />
+    -->
+
+    <link href="lib/animate/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link href="lib/bootstrap/css/bootstrap-reset.css" rel="stylesheet" />
+    <link href="lib/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="lib/durandal/css/durandal.css" />
+    <link rel="stylesheet" href="lib/gritter/css/jquery.gritter.css" />
+
+
+    <link href="lib/slidebars/css/slidebars.css" rel="stylesheet" />
+    <link href="lib/toastr/css/toastr.css" rel="stylesheet" />
+
+    <!--Transition out these CSS-->
+    <link href="lib/roadzen/css/ie10mobile.css" rel="stylesheet" />
+    <link href="lib/roadzen/css/style.css" rel="stylesheet" />
+    <link href="lib/roadzen/css/style-responsive.css" rel="stylesheet" />
+
+    <link href="lib/roadzen/css/webclient.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&.js"></script>
+
+</head>
+<body>
+    <audio id="whistleHandleElement" style="display: none;"></audio>
+    <audio id="alertHandleElement" style="display: none;"></audio>
+    <div id="applicationHost">        
+        <div class="splash">
+            <div class="message">
+                <img src="img/logo_splash.png" />
+            </div>
+            <div>
+                <span id="appVersionSplash">Version</span>
+            </div>
+            <i class="fa fa-circle-o-notch fa-spin fa-4x"></i>
+            <br /><br />
+            <a href="#" onclick="localStorage.clear(); location.reload();">Clear Creds & Restart</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //Assign Version Display
+        document.getElementById('appVersionSplash').innerHTML = window.versionDisplay;
+        //Audio Element Preloads
+        window.alertHandle = document.getElementById('alertHandleElement');
+        window.whistleHandle = document.getElementById('whistleHandleElement');
+    </script>
+
+    <script src="lib/require/require.js" data-main="app/main"></script>
+</body>
+</html>

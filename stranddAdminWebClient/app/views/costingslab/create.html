@@ -1,0 +1,78 @@
+﻿
+
+<form data-bind="submit: attemptcreate">
+    <section class="panel" id="popup" style="width:50%;">
+        <header class="strandd-head">
+            <span>
+                <i class="fa fa-server"></i>
+            </span>
+            <h3>Costing Slab Create</h3>
+
+        </header>
+
+
+
+
+        <table class="table service-table">
+
+           
+
+            <tr>
+                <td>
+                    serviceType
+                </td>
+                <td>
+                    <input data-bind="value: serviceType" type="text" />
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>
+                    status
+                </td>
+                <td>
+                    <input type="text" data-bind="value: status" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    baseCharge
+                </td>
+                <td>
+                    <input type="text" data-bind="value: baseCharge" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    baseKilometersFloor
+                </td>
+                <td>
+                    <input type="text" data-bind="value: baseKilometersFloor" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    extraKilometersCharge
+                </td>
+                <td>
+                    <input type="text" data-bind="value: extraKilometersCharge" />
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2">
+                    <button class="btn btn-danger" type="submit">Create</button>
+                </td>
+            </tr>
+
+        </table>
+
+
+
+
+    </section>
+
+</form>

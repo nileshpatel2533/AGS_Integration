@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76E5E80E-295C-4FEF-BB65-7F7A418CA4FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>stranddAdminWebClient</RootNamespace>
+    <AssemblyName>stranddAdminWebClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\datamodels\entityAccount.js" />
+    <Content Include="app\datamodels\entityIncident.js" />
+    <Content Include="app\datamodels\entityLocation.js" />
+    <Content Include="app\datamodels\entityVehicle.js" />
+    <Content Include="app\services\dataContext.js" />
+    <Content Include="app\services\gmapManager.js" />
+    <Content Include="app\services\incidentHubAdapter.js" />
+    <Content Include="app\services\notificationHandler.js" />
+    <Content Include="app\services\serverHubProxy.js" />
+    <Content Include="app\viewmodels\costingslab\create.js" />
+    <Content Include="app\viewmodels\costingslab\show.js" />
+    <Content Include="app\viewmodels\costingslab\update.js" />
+    <Content Include="app\viewmodels\excelreport.js" />
+    <Content Include="app\viewmodels\registration.js" />
+    <Content Include="app\viewmodels\payments.js" />
+    <Content Include="app\viewmodels\serviceLog.js" />
+    <Content Include="app\viewmodels\communicationsLog.js" />
+    <Content Include="app\viewmodels\reports.js" />
+    <Content Include="app\viewmodels\staff.js" />
+    <Content Include="app\viewmodels\incidentsLog.js" />
+    <Content Include="app\viewmodels\incidentsMap.js" />
+    <Content Include="app\viewmodels\incidentsHighlights.js" />
+    <Content Include="app\viewmodels\incidentsDetails.js" />
+    <Content Include="app\viewmodels\restart.js" />
+    <Content Include="app\viewmodels\login.js" />
+    <Content Include="app\views\costingslab\create.html" />
+    <Content Include="app\views\costingslab\show.html" />
+    <Content Include="app\views\costingslab\update.html" />
+    <Content Include="app\views\excelreport.html" />
+    <Content Include="app\views\incidents.html" />
+    <Content Include="app\views\registration.html" />
+    <Content Include="app\views\serviceLog.html" />
+    <Content Include="app\views\communicationsLog.html" />
+    <Content Include="app\views\reports.html" />
+    <Content Include="app\views\shellOperatorList.html" />
+    <Content Include="app\views\staff.html" />
+    <Content Include="app\views\payments.html" />
+    <Content Include="app\views\incidentsHighlights.html" />
+    <Content Include="app\views\restart.html" />
+    <Content Include="app\views\login.html" />
+    <Content Include="img\logo_splash.png" />
+    <Content Include="img\misc\phone.png" />
+    <Content Include="lib\animate\css\animate.css" />
+    <Content Include="lib\animate\css\animate.min.css" />
+    <Content Include="lib\bootstrap-datetimepicker\css\datetimepicker-pp.css" />
+    <Content Include="lib\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.kr.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="lib\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="lib\bootstrap\css\bootstrap-reset.css" />
+    <Content Include="lib\durandal\js\transitions\entranceMod.js" />
+    <Content Include="lib\durandal\js\transitions\fadeIn.js" />
+    <Content Include="lib\durandal\js\transitions\slideInRight.js" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\breeze\Adapters\breeze.ajax.jQuery.js" />
+    <Content Include="lib\breeze\Adapters\breeze.dataService.webApi.js" />
+    <Content Include="lib\breeze\Adapters\breeze.modelLibrary.ko.js" />
+    <Content Include="lib\breeze\Adapters\breeze.uriBuilder.json.js" />
+    <Content Include="lib\breeze\breeze.debug.js" />
+    <None Include="lib\breeze\breeze.intellisense.js" />
+    <Content Include="lib\breeze\breeze.min.js" />
+    <Content Include="lib\breeze\q.js" />
+    <Content Include="lib\breeze\q.min.js" />
+    <Content Include="app\views\incidentsMap.html" />
+    <Content Include="app\views\incidentsDetails.html" />
+    <None Include="lib\jquery\jquery-2.1.3.intellisense.js" />
+    <Content Include="lib\durandal\js\transitions\transitionHelper.js" />
+    <Content Include="lib\gmaps\gmaps.js" />
+    <Content Include="lib\gmaps\googlemapsapi.js" />
+    <Content Include="lib\gritter\css\jquery.gritter.css" />
+    <Content Include="lib\gritter\images\gritter-light.png" />
+    <Content Include="lib\gritter\images\gritter-long.png" />
+    <Content Include="lib\gritter\images\gritter.png" />
+    <Content Include="lib\gritter\images\ie-spacer.gif" />
+    <Content Include="lib\gritter\images\trees.jpg" />
+    <Content Include="lib\gritter\js\jquery.gritter.js" />
+    <Content Include="lib\gritter\js\jquery.gritter.min.js" />
+    <Content Include="lib\jquery\jquery-2.1.3.js" />
+    <Content Include="lib\jquery\jquery-2.1.3.min.js" />
+    <Content Include="lib\jquery\plugins\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="lib\jquery\plugins\jquery.dcjqaccordion.2.7.min.js" />
+    <Content Include="lib\jquery\plugins\jquery.fileDownload.js" />
+    <Content Include="lib\jquery\plugins\jquery.nicescroll.js" />
+    <Content Include="lib\jquery\plugins\jquery.scrollTo.min.js" />
+    <Content Include="lib\jquery\plugins\jquery.signalR-2.1.1.js" />
+    <Content Include="lib\jquery\plugins\jquery.signalR-2.1.1.min.js" />
+    <Content Include="lib\knockout\knockout-3.3.0.debug.js" />
+    <Content Include="lib\knockout\knockout-3.3.0.js" />
+    <Content Include="lib\lodash\lodash.js" />
+    <Content Include="lib\mclient\MobileServices.Web-1.2.5.min.js" />
+    <Content Include="lib\moment\moment-with-locales.js" />
+    <Content Include="lib\moment\moment-with-locales.min.js" />
+    <Content Include="lib\moment\moment.js" />
+    <Content Include="lib\moment\moment.min.js" />
+    <Content Include="lib\require\plugins\async.js" />
+    <Content Include="lib\require\plugins\depend.js" />
+    <Content Include="lib\require\plugins\font.js" />
+    <Content Include="lib\require\plugins\goog.js" />
+    <Content Include="lib\require\plugins\image.js" />
+    <Content Include="lib\require\plugins\json.js" />
+    <Content Include="lib\require\plugins\mdown.js" />
+    <Content Include="lib\require\plugins\noext.js" />
+    <Content Include="lib\require\plugins\propertyParser.js" />
+    <Content Include="lib\roadzen\audio\railalert.mp3" />
+    <Content Include="lib\roadzen\audio\railwhistle.mp3" />
+    <Content Include="lib\roadzen\css\style-responsive.css" />
+    <Content Include="lib\roadzen\css\style.css" />
+    <Content Include="app\services\liveDataConnection.js" />
+    <Content Include="lib\roadzen\img\mask-square.png" />
+    <Content Include="lib\roadzen\img\mask.png" />
+    <Content Include="lib\roadzen\js\core-security.js" />
+    <Content Include="app\app-settings.js" />
+    <Content Include="lib\roadzen\js\core-ui.js" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="app\views\shellHeader.html" />
+    <Content Include="app\views\shellRightSlidebar.html" />
+    <Content Include="app\views\shellSidebar.html" />
+    <Content Include="app\views\shellFooter.html" />
+    <Content Include="lib\jquery\jquery-2.1.3.min.map" />
+    <None Include="Properties\PublishProfiles\strandd-ctedev.pubxml" />
+    <None Include="Properties\PublishProfiles\strandd.pubxml" />
+    <None Include="Properties\PublishProfiles\strandd-dev.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\main.js" />
+    <Content Include="app\viewmodels\incidents.js" />
+    <Content Include="app\viewmodels\shell.js" />
+    <Content Include="app\viewmodels\welcome.js" />
+    <Content Include="app\views\incidentsLog.html" />
+    <Content Include="app\views\shell.html" />
+    <Content Include="app\views\welcome.html" />
+    <Content Include="lib\roadzen\css\ie10mobile.css" />
+    <Content Include="lib\roadzen\css\starterkit.css" />
+    <Content Include="index.html" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\durandal\css\durandal.css" />
+    <Content Include="lib\durandal\img\icon.png" />
+    <Content Include="lib\durandal\img\ios-startup-image-landscape.png" />
+    <Content Include="lib\durandal\img\ios-startup-image-portrait.png" />
+    <Content Include="lib\durandal\js\activator.js" />
+    <Content Include="lib\durandal\js\app.js" />
+    <Content Include="lib\durandal\js\binder.js" />
+    <Content Include="lib\durandal\js\composition.js" />
+    <Content Include="lib\durandal\js\events.js" />
+    <Content Include="lib\durandal\js\plugins\dialog.js" />
+    <Content Include="lib\durandal\js\plugins\history.js" />
+    <Content Include="lib\durandal\js\plugins\http.js" />
+    <Content Include="lib\durandal\js\plugins\observable.js" />
+    <Content Include="lib\durandal\js\plugins\router.js" />
+    <Content Include="lib\durandal\js\plugins\serializer.js" />
+    <Content Include="lib\durandal\js\plugins\widget.js" />
+    <Content Include="lib\durandal\js\system.js" />
+    <Content Include="lib\durandal\js\transitions\entrance.js" />
+    <Content Include="lib\durandal\js\viewEngine.js" />
+    <Content Include="lib\durandal\js\viewLocator.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\require\almond-custom.js" />
+    <Content Include="lib\require\r.js" />
+    <Content Include="lib\require\require.js" />
+    <Content Include="lib\require\text.js" />
+    <Content Include="lib\roadzen\css\webclient.css" />
+    <Content Include="img\default_user.png" />
+    <Content Include="img\job\ACCIDENT.png" />
+    <Content Include="img\job\BATTERY.png" />
+    <Content Include="img\job\FUEL-DIESEL.png" />
+    <Content Include="img\job\FUEL-PETROL.png" />
+    <Content Include="img\job\FUEL-WRONG.png" />
+    <Content Include="img\job\LOCKOUT-KEYINCAR.png" />
+    <Content Include="img\job\LOCKOUT-LOSTKEY.png" />
+    <Content Include="img\job\OTHER-BRAKE.png" />
+    <Content Include="img\job\OTHER-CLUTCH.png" />
+    <Content Include="img\job\OTHER-LIGHTS.png" />
+    <Content Include="img\job\OTHER-NOTSTART.png" />
+    <Content Include="img\job\OTHER-STEERING.png" />
+    <Content Include="img\job\PUNCTURE-REPAIR.png" />
+    <Content Include="img\job\PUNCTURE-SPARE.png" />
+    <Content Include="img\job\TOWING.png" />
+    <Content Include="img\job\UNKNOWN.png" />
+    <Content Include="img\map\mapicon_error.png" />
+    <Content Include="img\map\mapicon_info.png" />
+    <Content Include="img\map\mapicon_primary.png" />
+    <Content Include="img\map\mapicon_success.png" />
+    <Content Include="img\map\mapicon_unkown.png" />
+    <Content Include="img\map\mapicon_warning.png" />
+    <Content Include="img\placeholder.png" />
+    <Content Include="img\logo_header.png" />
+    <Content Include="lib\roadzen\js\js-utils.js" />
+    <Content Include="lib\roadzen\js\koBindings.js" />
+    <Content Include="lib\slidebars\css\slidebars.css" />
+    <Content Include="lib\slidebars\css\slidebars.min.css" />
+    <Content Include="lib\slidebars\js\slidebars.js" />
+    <Content Include="lib\slidebars\js\slidebars.min.js" />
+    <Content Include="lib\toastr\css\toastr.css" />
+    <Content Include="lib\toastr\js\toastr.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9977</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17802/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

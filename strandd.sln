@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stranddService", "stranddService\stranddService.csproj", "{B42229DE-7B4B-4B09-A857-D3557DB70BF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stranddAdminWebClient", "stranddAdminWebClient\stranddAdminWebClient.csproj", "{76E5E80E-295C-4FEF-BB65-7F7A418CA4FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B42229DE-7B4B-4B09-A857-D3557DB70BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42229DE-7B4B-4B09-A857-D3557DB70BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42229DE-7B4B-4B09-A857-D3557DB70BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42229DE-7B4B-4B09-A857-D3557DB70BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E5E80E-295C-4FEF-BB65-7F7A418CA4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E5E80E-295C-4FEF-BB65-7F7A418CA4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E5E80E-295C-4FEF-BB65-7F7A418CA4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E5E80E-295C-4FEF-BB65-7F7A418CA4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

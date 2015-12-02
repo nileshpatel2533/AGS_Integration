@@ -1,0 +1,67 @@
+
+ID :7dd751c6-90f4-47ab-a408-1637ec123fe8
+Type :INBOUND SMS
+
+ID :e112f14b-455f-4936-99cf-6a2f2a35e63b
+Type :INBOUND SMS
+Tag :sample string 1
+Source :sample string 2
+Text :sample string 3
+StartTime :9/8/2015 6:06:35 PM
+------------------------------------------------
+
+ID :fb55877b-5a37-4b59-925d-e855040bbbd9
+Type :INBOUND SMS
+Tag :sample string 1
+Source :sample string 2
+Text :sample string 3
+StartTime :9/8/2015 6:08:25 PM
+------------------------------------------------
+
+ID :a9b600d5-7ea9-41bf-a9c8-30540a83ea5f
+Type :INBOUND SMS
+Tag :sample string 1
+Source :sample string 2
+Text :sample string 3
+StartTime :9/8/2015 6:26:09 PM
+------------------------------------------------
+
+ID :5837f701-eda3-433c-96f2-60dc84685680
+Type :INBOUND SMS
+Tag :7698670789
+Source :Idea provider
+Text :sample string 3
+StartTime :9/9/2015 3:16:28 PM
+------------------------------------------------
+
+ID :c46918b3-2474-477f-8c87-f57fc853d344
+Type :INBOUND SMS
+Tag :7698670780
+Source :Idea provider
+Text :sample string 3
+StartTime :9/9/2015 3:24:04 PM
+------------------------------------------------
+
+ID :a41fe8ef-7f6e-4c8e-af8f-ce1d6d9c92db
+Type :INBOUND SMS
+Tag :7698670789
+Source :Idea provider
+Text :sample string 3
+StartTime :9/9/2015 3:42:00 PM
+------------------------------------------------
+
+ID :201d9f38-4718-4925-a520-cbe868a28d19
+Type :INBOUND SMS
+Tag :098670789
+Source :sample string 2
+Text :sample string 3
+StartTime :9/15/2015 6:35:43 PM
+------------------------------------------------
+
+ID :a6d4a58d-1252-46ef-bce7-b16b6eb73060
+Type :INBOUND SMS
+Tag :7698670781
+Source :sample string 2
+Text :sample string 3
+StartTime :9/16/2015 11:22:05 AM
+------------------------------------------------

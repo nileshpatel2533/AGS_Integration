@@ -1,0 +1,83 @@
+﻿<section class="panel" id="spv_Staff">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-server"></i>
+        </span>
+        <h3 data-bind="text: displayName"> </h3>
+        <!--
+        <h3>StrandD Azure Mobile Services Log <span data-bind="visible: (!stateLoading())">| Last Updated [<span data-bind="text: timestampUpdate"></span>] </span></h3>
+        -->
+        <!--<span class="strandd-combo pull-right" data-bind="visible: (!stateLoading()), click: refreshLogCore">
+            <i class="fa fa-refresh"></i> Refresh
+        </span>-->
+        <span class="strandd-combo pull-right">
+            <i class="fa fa-refresh"></i> <a data-bind="attr: { href: '#costingslabcreate/'}"><span>Create New</span></a>
+        </span>
+    </header>
+    <div class="panel-body" data-bind="visible: logCore().length == 0">
+        <h3><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLoading"></span></h3>
+    </div>
+    <!--
+        <div class="panel-body" data-bind="visible: logCore().length > 0">
+            <select class="form-control" data-bind="options: indexAdminRoles, optionsText: 'text', optionsValue: 'code', value: newAccountRole"></select>
+        </div>
+        -->
+    <table class="table service-table" data-bind="visible: logCore().length > 0">
+        <thead>
+            <tr>
+                <th><i class="fa fa-unlock"></i> ServiceType</th>
+                <th><i class="fa fa-user"></i> Status</th>
+                <th><i class="fa fa-user"></i> BaseCharge</th>
+                <th><i class="fa fa-phone"></i> BaseKilometersFloor</th>
+                <th><i class="fa fa-envelope"></i> ExtraKilometersCharge</th>
+                <th><i class="fa fa-envelope"></i> Actions</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: logCore">
+            <tr>
+                <td>
+                    <div>
+                        <span data-bind="text: serviceType"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: status"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: baseCharge"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: baseKilometersFloor"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: extraKilometersCharge"></span>
+                    </div>
+                </td>
+                <td>
+                    <!--<div data-bind="visible: logCore(response.status) == 'CURRENT'">-->
+                        <!-- <span data-bind="text: extraKilometersCharge"></span>-->
+                        <!--<a data-bind="click: sectionLog" class="btn btn-white "><i class="fa fa-times"></i> Edit</a>  visible: (paymentAmount() > 0)-->
+                    <div data-bind="visible: (status == 'CURRENT')">
+                        <a data-bind="attr: { href: '#costingslabupdate/' + id}"><span>ReCreate</span></a>
+                       
+
+                    </div>
+                </td>
+
+
+
+            </tr>
+            
+        </tbody>
+        
+    </table>
+</section>
+
+

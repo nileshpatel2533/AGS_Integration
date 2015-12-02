@@ -1,0 +1,19 @@
+﻿<div>
+    <section id="container">
+
+        <div data-bind="compose:'shellHeader.html'"></div>
+        <div data-bind="compose: viewSidebar"></div>
+        <!--main content start-->
+        <section id="main-content" data-bind="style:{ 'margin-left' : styleMainContentLeftMargin }">
+            <section class="wrapper site-min-height">
+                <!-- page start-->
+                <div data-bind="router: { transition:'entranceMod' }"></div>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <div data-bind="compose:'shellRightslidebar.html'"></div>
+        <div data-bind="compose:'shellFooter.html'"></div>
+
+    </section>      
+</div>

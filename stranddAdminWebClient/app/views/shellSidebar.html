@@ -1,0 +1,17 @@
+﻿<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion" data-bind="foreach: router.navigationModel">
+            <li data-bind="css: { active: isActive }">
+                <a data-bind="attr: { href: hash }, css: { active: isActive }">
+                    <i class="fa " data-bind="css: icon"></i>
+                    <span data-bind="text: title"></span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->

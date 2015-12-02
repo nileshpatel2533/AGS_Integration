@@ -1,0 +1,78 @@
+﻿<section class="panel" id="_incidentsLog">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-bar-chart-o"></i>
+        </span>
+        <h3>Incident Log</h3>
+    </header>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            <select data-bind="options: listLogSelection, optionsText: 'text', optionsValue: 'value', value: $parent.stateLogActive" class="form-control input-lg m-bot15"></select>
+        </div>
+        <div class="col-sm-6">           
+            <h4>
+                <span data-bind="css: activeLogIndicator.class(), html: activeLogIndicator.display()"></span>   <span data-bind="css: historyLogIndicator.class(), html: historyLogIndicator.display()"></span>
+            </h4>
+        </div>
+    </div>
+    <div class="panel-body" data-bind="visible: $parent.log().length == 0">
+        <h3><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLoading"></span></h3>
+    </div>
+    <table class="table table-hover log-table" data-bind="visible: $parent.log().length > 0">
+        <thead>
+            <tr>
+                <th><i class="fa fa-user"></i> Customer</th>
+                <th><i class="fa fa-user-md"></i> Operator</th>
+                <th><i class="fa fa-wrench"></i> Provider</th>
+                <th><i class="fa fa-steam"></i> Description</th>
+                <th><i class="fa fa-inr"></i> </th>
+                <th><i class="fa fa-tasks"></i> Status</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: $parent.log">
+            <tr data-bind="click: $parent.selectIncident, css: { active: isCurrent() }">
+                <td>
+                    <div>
+                        <a href="#"><span data-bind="text: accountDisplay"></span></a>
+                    </div>
+                    <div>
+                        <a href="#"><small><span data-bind="text: vehicleDisplay"></span></small></a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: adminAccountDisplay"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: concertoDisplay"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="media">
+                        <a href="#" class="pull-left">
+                            <img alt="" style="height: 35px" data-bind="attr:{src: jobDisplayObj().imagesrc }" class="media-object">
+                        </a>
+                        <div class="media-body inline-media">
+                            <span data-bind="text: jobDisplayObj().text"></span>
+                            <br>
+                            <small><span data-bind="calendarTime: createdAt"></span></small>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span data-bind="visible: (paymentAmount() > 0)">
+                        <i class="fa fa-check-circle-o fa-fw"></i>
+                    </span><span data-bind="visible: (paymentAmount() < 0)"><i class="fa fa-times-circle-o fa-fw"></i></span>
+                    <small data-bind="visible: (paymentAmount() > 0), text: paymentAmount()"></small>
+                </td>
+                <td class="l-progress">
+                    <div class="progress progress-xs" data-bind="progressDisplay: statusDisplayObj"></div>
+                    <small data-bind="text: statusDisplayObj().text">Status Text</small>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+

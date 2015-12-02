@@ -1,0 +1,57 @@
+﻿<!-- Right Slidebar start -->
+<div class="sb-slidebar sb-right sb-style-overlay">
+    <h5 class="side-title">Admin Account</h5>
+    <ul class="p-task tasks-bar">
+        <li>
+            <i class="fa fa-fw fa-user-md"></i> <span data-bind="text: loginName"></span><br />
+            <i class="fa fa-fw fa-envelope"></i> <span data-bind="text: loginEmail"></span>
+        </li>
+        <li class="external">
+            <span><a href="#" data-bind="click: attemptLogout"><i class="fa fa-fw fa-sign-out"></i> Log Out</a></span>
+        </li>
+    </ul>
+    <h5 class="side-title">Application Status</h5>
+    <ul class="p-task tasks-bar">
+        <!--
+        <li data-bind="visible: stateSignalRConnect">
+            <a href="#">
+                <div class="task-info">
+                    <div class="desc">SignalR Connection</div>
+                    <div class="percent">LIVE</div>
+                </div>
+                <div class="progress progress-striped active">
+                    <div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-success">
+                        <span class="sr-only">Live SignalR Connection</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+            -->
+        <li class="external">
+            <a href="#" data-bind="click: attemptRestart">Restart Application</a>
+        </li>
+    </ul>
+    <h5 class="side-title">Support</h5>
+    <ul class="p-task tasks-bar">
+        <!--
+        <li data-bind="visible: stateSignalRConnect">
+            <a href="#">
+                <div class="task-info">
+                    <div class="desc">SignalR Connection</div>
+                    <div class="percent">LIVE</div>
+                </div>
+                <div class="progress progress-striped active">
+                    <div style="width: 100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar progress-bar-success">
+                        <span class="sr-only">Live SignalR Connection</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+            -->
+        <li class="external">
+            <a href="mailto:support@roadzen.in">support@roadzen.in</a><br/>
+            <span>+91 98 18 243420</span>
+        </li>
+    </ul>
+</div>
+<!-- Right Slidebar end -->

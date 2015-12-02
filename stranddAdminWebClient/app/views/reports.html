@@ -1,0 +1,43 @@
+﻿<section class="panel">
+    <header class="panel-heading">
+        Incident History Report Generator
+    </header>
+    <div class="panel-body">
+        <form class="form-horizontal  tasi-form" action="#">
+            <div class="form-group">
+                <label class="control-label col-md-3"> Time Zone</label>
+                <div class="col-md-4">
+                    <select data-bind="options: listTimeZoneSelection, optionsText: 'DisplayName', optionsValue: 'Id', value: selectedTimeZone" class="form-control input-lg m-bot15"></select>
+                </div>
+            </div>            
+            <div class="form-group">
+                <label class="control-label col-md-3"> Start Time</label>
+                <div class="col-md-4">
+                    <div class="input-group date form_datetime-component">
+                        <input type="text" class="form-control" data-bind="value: selectedStartTime" readonly="" size="16">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger date-set"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3"> End Time</label>
+                <div class="col-md-4">
+                    <div class="input-group date form_datetime-component">
+                        <input type="text" class="form-control" data-bind="value: selectedEndTime" readonly="" size="16">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger date-set"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3"> Request Submission</label>
+                <div class="col-md-4">
+                    <button data-bind="click: getExcelReport, html: markupGenerateButton, css: cssGenerateButton, disable: disableGenerateButton" type="button"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

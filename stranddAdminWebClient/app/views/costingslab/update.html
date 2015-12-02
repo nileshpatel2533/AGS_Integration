@@ -1,0 +1,69 @@
+﻿<section class="panel" id="updatecslab">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-server"></i>
+        </span>
+        <h3 data-bind="text: displayName"> </h3>
+        <!--
+        <h3>StrandD Azure Mobile Services Log <span data-bind="visible: (!stateLoading())">| Last Updated [<span data-bind="text: timestampUpdate"></span>] </span></h3>
+        -->
+
+    </header>
+
+    <table class="table service-table" data-bind="visible: logCore().length > 0">
+        <tbody data-bind="foreach: logCore">
+            <tr>
+                <td>Service Type:</td>
+                <td>
+                    <div>
+                        <input type="text" data-bind="value : serviceType" readonly="readonly" />
+                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Status:
+                </td>
+                <td>
+                    <div>
+                        <input type="text" data-bind="value : status" readonly="readonly" />
+                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Base Charge:</td>
+                <td>
+                    <div>
+                        <input type="text" data-bind="value : baseCharge" />
+                   
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Base Kilometers Floor:</td>
+                <td>
+                    <div>
+                        <input type="text" data-bind="value : baseKilometersFloor" />
+                     
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Extra Kilometers Charge:</td>
+                <td>
+                    <div>
+                       
+                        <input type="text" data-bind="value : extraKilometersCharge" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-danger btn-xs" data-bind="click: $parent.updateCostingSlab"><i class="fa fa-hand-o-down ">Update</i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,75 @@
+﻿<section class="panel" id="spv_Payments">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-server"></i>
+        </span>
+        <h3 data-bind="text: displayName"></h3>
+        <!--
+        <h3>StrandD Azure Mobile Services Log <span data-bind="visible: (!stateLoading())">| Last Updated [<span data-bind="text: timestampUpdate"></span>] </span></h3>
+        -->
+        <span class="strandd-combo pull-right" data-bind="visible: (!stateLoading()), click: refreshLogCore">
+            <i class="fa fa-refresh"></i> Refresh
+        </span>
+    </header>
+    <div class="panel-body" data-bind="visible: logCore().length == 0">
+        <h3><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLoading"></span></h3>
+    </div>
+    <table class="table service-table" data-bind="visible: logCore().length > 0">
+        <thead>
+            <tr>
+                <th><i class="fa fa-clock-o"></i> Timestamp</th>
+                <th><i class="fa fa-steam"></i> IncidentGUID</th> 
+                <th><i class="fa fa-user"></i> AccountID</th>                               
+                <th><i class="fa fa-credit-card"></i> Platform</th>
+                <th><i class="fa fa-barcode"></i> Platform ID</th>
+                <th><i class="fa fa-tasks"></i> Status</th>
+                <th><i class="fa fa-money"></i> Amount</th>
+                <th><i class="fa fa-user"></i> Buyer</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: logCore">
+            <tr>
+                <td>
+                    <div>
+                        <span data-bind="expandedTime: __createdAt"></span> (<small data-bind="agoTime: __createdAt"></small>)
+                    </div>
+                </td>
+                <td>
+                    <div data-bind="if: (incidentGUID)">
+                        <a data-bind="attr: { href: '#incidents/' + incidentGUID}"><span data-bind="text: incidentGUID"></span></a>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: providerUserID"></span>
+                    </div>
+                </td>                
+                <td>
+                    <div>
+                        <span data-bind="text: paymentPlatform"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: platformPaymentID"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: status"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="visible: (amount > 0), text: amount + ' ' + currency"></span> <small data-bind="visible: (fees > 0), text: '[-' + fees + ']'"></small>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <small data-bind="visible: (buyerName != 'NONE'), text: buyerName + '-' + buyerPhone + ' [' + buyerEmail + ']'"></small>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

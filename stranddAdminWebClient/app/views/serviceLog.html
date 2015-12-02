@@ -1,0 +1,45 @@
+﻿<section class="panel" id="spv_ServiceLog">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-server"></i>
+        </span>
+        <h3>StrandD Azure Mobile Service Log </h3>
+        <!--
+        <h3>StrandD Azure Mobile Services Log <span data-bind="visible: (!stateLoading())">| Last Updated [<span data-bind="text: timestampUpdate"></span>] </span></h3>
+        -->
+        <span class="strandd-combo pull-right" data-bind="visible: (!stateLoading()), click: refreshLogCore">
+            <i class="fa fa-refresh"></i> Refresh
+        </span>
+    </header>
+    <div class="panel-body" data-bind="visible: logCore().length == 0">
+        <h3><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLoading"></span></h3>
+    </div>
+    <table class="table service-table" data-bind="visible: logCore().length > 0">
+        <thead>
+            <tr>
+                <th><i class="fa fa-clock-o"></i> Timestamp</th>
+                <th><i class="fa fa-tasks"></i> Message</th>
+                <th><i class="fa fa-tasks"></i> Source</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: logCore">
+            <tr data-bind="css: { information: level == 'Information', warning: level == 'Warning', error: level == 'Error' }">
+                <td>
+                    <div>
+                        <span data-bind="expandedTime: timestamp"></span> (<small data-bind="agoTime: timestamp"></small>)
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="visible: level == 'Information'"><i class="fa fa-info fa-fw"></i></span><span data-bind="visible: level == 'Warning'"><i class="fa fa-warning fa-fw"></i></span><span data-bind="visible: level == 'Error'"><i class="fa fa-exclamation-circle fa-fw"></i></span> <span data-bind="text: details.message"></span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span data-bind="text: details.category"></span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

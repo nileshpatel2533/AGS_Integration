@@ -1,0 +1,400 @@
+﻿<section class="panel" id="spv_Details">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-bar-chart-o"></i>
+        </span>
+        <h3>Current Incident Details</h3>
+        <span class="strandd-combo pull-right" data-bind="visible: (!stateLoading()), click: deselectCurrent">
+            <i class="fa fa-stop"></i> Deselect
+        </span>
+    </header>
+    <div class="panel-body" data-bind="visible: (stateLoading())">
+        <h3><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLoading"></span></h3>
+    </div>
+    <!-- ko if: currentIncident -->
+    <div class="panel-body" data-bind="with: currentIncident">
+        <div class="media">
+            <a href="#" class="pull-left">
+                <img alt="" data-bind="attr:{src: jobDisplayObj().imagesrc }" class="media-object">
+            </a>
+            <div class="media-body inline-media">
+                <h3><span data-bind="text: jobDisplayObj().text"></span></h3>
+                <span>
+                    <span data-bind="calendarTime: createdAt"></span> <small>(<strong data-bind="agoTime: createdAt"></strong>)</small>
+                </span>
+            </div>
+        </div>
+    </div>
+    <table class="table details-table">
+        <tbody>
+            <tr data-bind="with: currentIncident">
+                <td>
+                    <i class="fa fa-user fa-fw"></i>
+                </td>
+                <td>
+                    <span data-bind="text: accountDisplay"></span>
+                    <div data-bind="visible: 'account_email'">
+                        <span data-bind="text: account_email"></span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr data-bind="visible: (!stateOperatorEdit())" >
+                <td>
+                    <i class="fa fa-user-md fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: adminAccountDisplay"></span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleOperatorEdit, attr: { title: 'Reassign Operator' }">
+                            <i data-bind="visible: (!stateAdminLocked())" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: stateOperatorEdit">
+                <td>
+                    <i class="fa fa-user-md fa-fw"></i>
+                </td>
+                <td>
+                    <div class="btn-group btn-group-justified">
+                        <a data-bind="click: toggleOperatorEdit" class="btn btn-white "><i class="fa fa-times"></i> Cancel</a>
+                        <a data-bind="click: function(data, event) { updateIncidentOperator(incidentOperatorRequest, data, event) }" class="btn btn-white "><i class="fa fa-check"></i> Save</a>
+                    </div>
+                    <div data-bind="with: incidentOperatorRequest">
+                        <div>
+                            <select class="form-control" data-bind="options: $parent.listOperatorSelection, optionsText: 'text', optionsValue: 'value', value: operatorUserProviderID"></select>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fa fa-car fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: vehicleDisplay"></span>
+                </td>
+                <td></td>
+            </tr>
+            <tr data-bind="with: currentIncident">
+                <td>
+                    <i class=" fa fa-map-marker fa-fw"></i>
+                </td>
+                <td>
+                    <span data-bind="html: locationDisplay"></span><br />
+                    <span data-bind="text: coordsDisplayObj().text"></span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" target="_blank" data-bind="attr: { href: coordsDisplayObj().link, title: 'Launch Google Maps' }">
+                            <i class=" fa fa-map-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class=" fa fa-asterisk fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: additionalDetails() ? additionalDetails : 'No Additional Details'"></span>
+                </td>
+                <td></td>
+            </tr>
+            <tr data-bind="visible: stateDetailsEdit">
+                <td>
+                    <i class=" fa fa-pencil-square-o"></i>
+                </td>
+                <td>
+                    <div class="btn-group btn-group-justified">
+                        <a data-bind="click: toggleDetailsEdit" class="btn btn-white "><i class="fa fa-times"></i> Cancel</a>
+                        <a data-bind="click: function(data, event) { updateIncidentDetails(incidentDetailsRequest, data, event) }" class="btn btn-white "><i class="fa fa-check"></i> Save</a>
+                    </div>
+                    <hr />
+                    <div data-bind="with: incidentDetailsRequest">
+                        <div>
+                            <div class="iconic-input">
+                                <i class="fa fa-wrench fa-fw"></i>
+                                <input data-bind="value: concertoCaseID" type="text" class="form-control" placeholder="Concerto Case ID">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="iconic-input">
+                                <i class="fa fa-paperclip fa-fw"></i>
+                                <input data-bind="value: notes" type="text" class="form-control" placeholder="Staff Notes" />
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr data-bind="visible: (!stateDetailsEdit())">
+                <td>
+                    <i class="fa fa-wrench fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: concertoDisplay"></span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleDetailsEdit, attr: { title: 'Edit Staff Details' }">
+                            <i data-bind="visible: (!stateAdminLocked() || currentIncident().statusDisplayObj().sequence == 1)" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: (!stateDetailsEdit())">
+                <td>
+                    <i class="fa fa-paperclip fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: staffNotes() ? staffNotes : 'No Staff Notes'"></span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleDetailsEdit, attr: { title: 'Edit Staff Details' }">
+                            <i data-bind="visible: (!stateAdminLocked() || currentIncident().statusDisplayObj().sequence == 1)" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: (!stateCostingEdit())">
+                <td>
+                    <i class="fa fa-road fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: costingDisplay"></span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleCostingEdit, attr: { title: 'Edit Costing Details' }">
+                            <i data-bind="visible: (!stateAdminLocked() || currentIncident().statusDisplayObj().sequence == 1)" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: stateCostingEdit">
+                <td>
+                    <i class=" fa fa-pencil-square-o"></i>
+                </td>
+                <td>
+                    <div class="btn-group btn-group-justified">
+                        <a data-bind="click: toggleCostingEdit" class="btn btn-white "><i class="fa fa-times"></i> Cancel</a>
+                        <a data-bind="click: function(data, event) { updateIncidentCosting(incidentCostingRequest, data, event) }" class="btn btn-white "><i class="fa fa-check"></i> Save</a>
+                    </div>
+                    <hr />
+                    <div data-bind="with: incidentCostingRequest">
+                        <div class="iconic-input">
+                            <select class="form-control" data-bind="options: $parent.indexServiceTypeCodes, optionsText: 'text', optionsValue: 'code', value: serviceType,  selectedOptionValue: 'isSelected' "></select>
+                        </div>
+                        <div>
+                            <div class="iconic-input">
+                                <i class="fa fa-road fa-fw"></i>
+                                <input data-bind="value: serviceKilometers" type="text" class="form-control" placeholder="Service Kilometers" />
+                            </div>
+                            <br />
+                            <div class="iconic-input">
+                                <i class="fa fa-inr fa-fw"></i>
+                                <input data-bind="value: parkingCosts" type="text" class="form-control" placeholder="Parking Costs">
+                            </div>
+                            <div class="iconic-input">
+                                <i class="fa fa-inr fa-fw"></i> 
+                                <input data-bind="value: tollCosts" type="text" class="form-control" placeholder="Toll Costs">
+                            </div>
+                            <div class="iconic-input">
+                                <i class="fa fa-inr fa-fw"></i> 
+                                <input data-bind="value: otherCosts" type="text" class="form-control" placeholder="Other Costs">
+                            </div>
+                            <br />                           
+                            <input type="checkbox"/> Enable Discount
+                            <div class="iconic-input">
+                                <i class="fa fa-inr fa-fw"></i>
+                                <input data-bind="value: offsetDiscount" type="text" class="form-control" placeholder="Discount">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr data-bind="visible: stateStatusEdit">
+                <td>
+                    <i class=" fa fa-pencil-square-o"></i>
+                </td>
+                <td>
+                    <div class="btn-group btn-group-justified">
+                        <a data-bind="click: toggleStatusEdit" class="btn btn-white "><i class="fa fa-times"></i> Cancel</a>
+                        <a data-bind="click: function(data, event) { updateIncidentStatus(incidentStatusRequest, data, event) }" class="btn btn-white "><i class="fa fa-check"></i> Save</a>
+                    </div>
+
+                    <small>Updated incident data will be reflected on the Customer's Mobile Client.</small>
+                    <hr />
+                    <div data-bind="with: incidentStatusRequest">
+                        <div>
+                            <div>
+                                <select class="form-control" data-bind="options: $parent.indexCurrentStatusCodes, optionsText: 'text', optionsValue: 'code', value: newStatusCode"></select>
+                                <!--
+                                                            <button class="btn btn-danger btn-xs" data-bind="click: $parent.editStatusClose"><i class="fa fa-hand-o-down "></i></button>
+                                                            <button class="btn btn-info btn-xs" data-bind="click: $parent.editStatusBack"><i class="fa fa-chevron-left "></i></button>
+
+
+
+                                                            <span class="label label-inverse" data-bind="text: newStatusCode"></span>
+                                                            <button class="btn btn-info btn-xs" data-bind="click: $parent.editStatusForward"><i class="fa fa-chevron-right"></i></button>
+                                    -->
+                            </div>
+                            <div class="btn-group"></div>
+                        </div>
+                        <div>
+                            <div class="iconic-input">
+                                <i class="fa fa-clock-o fa-fw"></i>
+                                <input data-bind="value: eta" type="text" class="form-control" placeholder="ETA in Minutes">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="iconic-input">
+                                <i class="fa fa-rupee fa-fw"></i>
+                                <input data-bind="value: serviceFee" type="text" class="form-control" placeholder="Service Fee">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr data-bind="visible: (!stateStatusEdit())">
+                <td>
+                    <i class=" fa fa-tasks fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <div>
+                        <div>
+                            <strong data-bind="text: statusDisplayObj().text"></strong>
+                        </div>
+                        <div class="progress" data-bind="progressDisplay: statusDisplayObj"></div>
+                    </div>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleStatusEdit, attr: { title: 'Modify Incident Status' }">
+                            <i data-bind="visible: (!stateAdminLocked() || currentIncident().statusDisplayObj().sequence == 1)" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: (!stateStatusEdit())">
+                <td>
+                    <i class=" fa fa-clock-o fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="if: providerArrivalTime">
+                        <span>
+                            <span data-bind="calendarTime: providerArrivalTime"></span> <small>(<strong data-bind="agoTime: providerArrivalTime"></strong>)</small>
+                        </span>
+                    </span>
+                    <span data-bind="if: (!providerArrivalTime())">
+                        <span>
+                            <span>No ETA</span>
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleStatusEdit, attr: { title: 'Modify Incident Status' } ">
+                            <i data-bind="visible: (!stateAdminLocked() || currentIncident().statusDisplayObj().sequence == 1)" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: (!stateStatusEdit())">
+                <td>
+                    <i class="fa fa-inr fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: (serviceFee() != 0) ? 'Service Fee: ' + serviceFee() : 'No Service Fee'"></span>
+                </td>
+                <td>
+                    <span>
+                        <a href="#" data-bind="click: toggleStatusEdit, attr: { title: 'Modify Incident Status' } ">
+                            <i data-bind="visible: (!stateAdminLocked() || currentIncident().statusDisplayObj().sequence == 1)" class=" fa fa-pencil-square-o"></i>
+                        </a>
+                    </span>
+                </td>
+            </tr>
+            <tr data-bind="visible: (!statePaymentEdit())">
+                <td>
+                    <i class="fa fa-inr fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="visible: (paymentAmount() < 0)">Payment Failure</span>
+                    <span data-bind="visible: (paymentAmount() == 0)">No Payment</span>
+                    <span data-bind="visible: (paymentAmount() > 0), text: paymentMethod() + ': ' + paymentAmount()"></span>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="visible: ((paymentAmount() < serviceFee()) && !$parent.stateAdminLocked())">
+                        <a href="#" data-bind="click: $parent.triggerCurrentInvoice, attr: { title: 'Trigger Current Invoice Email' }">
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </span> 
+                    <span data-bind="visible: (paymentAmount() >= serviceFee())">
+                        <i class="fa fa-check-circle-o fa-fw"></i>
+                    </span>
+                    <span data-bind="visible: (paymentAmount() < 0)">
+                        <i class="fa fa-times-circle-o fa-fw"></i>
+                    </span>
+                    <span data-bind="visible: ((paymentAmount() < serviceFee()) && !$parent.stateAdminLocked())">
+                        <a href="#" data-bind="click: $parent.togglePaymentEdit, attr: { title: 'Add Payment' }">
+                            <i class="fa fa-pencil-square-o fa-fw"></i>
+                        </a>
+                    </span>          
+                </td>
+            </tr>
+            <tr data-bind="visible: statePaymentEdit">
+                <td>
+                    <i class=" fa fa-pencil-square-o"></i>
+                </td>
+                <td>
+                    <div class="btn-group btn-group-justified">
+                        <a data-bind="click: togglePaymentEdit" class="btn btn-white "><i class="fa fa-times"></i> Cancel</a>
+                        <a data-bind="click: function(data, event) { updateIncidentPayment(incidentPaymentRequest, data, event) }" class="btn btn-white "><i class="fa fa-check"></i> Save</a>
+                    </div>
+                    <hr />
+                    <div data-bind="with: incidentPaymentRequest">
+                        <div>
+                            <select class="form-control" data-bind="options: $parent.listPaymentSelection, optionsText: 'text', optionsValue: 'value', value: paymentMethod"></select>
+                        </div>
+                        <div>
+                            <div class="iconic-input" data-bind="visible: (paymentMethod()=='PAYMENT-CASH')">
+                                <i class="fa fa-inr fa-fw"></i>
+                                <input data-bind="value: paymentAmount" type="text" class="form-control" placeholder="Cash Amount" />
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>            
+            <tr>
+                <td>
+                    <i class="fa fa-star-half-o fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: (rating() != 0) ? rating() + '%' : 'No Service Rating'"></span>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fa fa-comment-o fa-fw"></i>
+                </td>
+                <td data-bind="with: currentIncident">
+                    <span data-bind="text: customerComments() ? customerComments : 'No Customer Comments'"></span>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- /ko -->
+</section>

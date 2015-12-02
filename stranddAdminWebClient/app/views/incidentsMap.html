@@ -1,0 +1,25 @@
+﻿<section class="panel" id="spv_map">
+    <header class="strandd-head">
+        <span>
+            <i class="fa fa-map-marker"></i>
+        </span>
+        <h3>Active Incident Map</h3>
+        <span class="strandd-combo pull-right" data-bind="visible: (!$parent.hashIncidentGUID()), foreach: optionsPresetPositions">
+            <span data-bind="click: selectPreset">
+                <i class="fa " data-bind="css: icon"></i> <span data-bind="text: code"> </span>
+            </span>
+        </span>
+    </header>
+    <div class="panel-body" data-bind="visible: $parent.log().length == 0">
+        <h3><i class="fa fa-circle-o-notch fa-spin"></i> <span data-bind="text: stateLoading"></span></h3>
+    </div>
+    <div class="panel-body" data-bind="visible: $parent.log().length > 0">
+        <div id="gmap_canvas" class="gmaps" data-bind="googleMap: $parent.log, positionTag:currentPositionObj, currentTag: $parent.hashIncidentGUID, loadingTag: stateLoading, mapOptions: optionsMap, markerOptions: optionsMarker"></div>
+    </div>
+</section>
+
+
+
+
+
+

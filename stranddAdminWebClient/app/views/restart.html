@@ -1,0 +1,10 @@
+﻿<div class="container">
+    <form class="form-restart" data-bind="submit: attemptRestart">     
+        <div class="login-wrap">
+            <div class="alert alert-block alert-info fade in" data-bind="visible: stateLogout">
+                <strong>You have Logged Out! </strong><span data-bind="text: stateLogout"></span>
+            </div>
+            <button class="btn btn-lg btn-login btn-block" type="submit">Restart</button>
+        </div>
+    </form>
+</div>
